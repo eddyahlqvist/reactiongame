@@ -5,6 +5,8 @@ class Projectile {
     this.x = _x;
     this.y = _y;
     this.d = _d;
+    this.xspeed = 3;
+    this.yspeed = 1;
   }
 
   show() {
@@ -12,6 +14,9 @@ class Projectile {
     ellipse(this.x, this.y, this.d, this.d);
   }
 
-  
+  move() {
+    this.x += this.xspeed;
+    this.y += this.yspeed;
+  }
 
 }

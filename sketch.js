@@ -6,9 +6,11 @@ let projectiles = [];
 
 function setup() {
   createCanvas(800, 600);
-  let p = new Projectile(width / 2, height / 2, 25);
-  projectiles.push(p);
-  // console.log(projectiles)
+  for (i = 0; i < 5; i++) {
+    let p = new Projectile(0, height / 2, 25);
+    projectiles.push(p);
+  }
+  console.log(projectiles)
 }
 
 function draw() {
@@ -19,6 +21,7 @@ function draw() {
 
   for (let projectile of projectiles) {
     projectile.show();
+    projectile.move();
   }
 
 }
