@@ -1,4 +1,4 @@
-// Coded by Eddy Ahlqvist - 2020
+/* Coded by Eddy Ahlqvist - 2020 */
 
 class Projectile {
   constructor(_x, _y, _dia) {

@@ -1,4 +1,4 @@
-// Coded by Eddy Ahlqvist - 2020
+/* Coded by Eddy Ahlqvist - 2020 */
 
 let score = 0;
 let hit = false;
@@ -22,7 +22,7 @@ function draw() {
 
   for (let projectile of projectiles) {
     projectile.show();
-    projectile.move();   
+    projectile.move();
   }
 
 }
