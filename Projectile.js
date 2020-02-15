@@ -9,14 +9,26 @@ class Projectile {
     this.yspeed = random(-1.5, 1.5);
   }
 
+  bounds() {
+    if (this.x >= width || this.y >= height || this.y <= 0){
+      projectiles.splice();
+    }
+  }
+
+  fire() {
+    if (fire) {
+      this.move();
+    }
+  }
+
   show() {
     fill(255);
     ellipse(this.x, this.y, this.dia, this.dia);
   }
 
   move() {
-    // this.x += this.xspeed;
-    // this.y += this.yspeed;
+    this.x += this.xspeed;
+    this.y += this.yspeed;
   }
 
   hitdetect(_x, _y) {
