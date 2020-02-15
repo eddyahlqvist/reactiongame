@@ -15,8 +15,8 @@ class Projectile {
   }
 
   move() {
-    this.x += this.xspeed;
-    this.y += this.yspeed;
+    // this.x += this.xspeed;
+    // this.y += this.yspeed;
   }
 
   hitdetect(_x, _y) {
@@ -24,12 +24,16 @@ class Projectile {
     if (d < this.dia / 2) {
       hit = true;
       projectiles.pop();
+      this.addScore();
     } else {
       hit = false;
     }
 
+  }
+
+  addScore() {
     if (hit == true) {
-      score += 10;
+      currentScore += 10 * scoreMultiplyer;
     }
   }
 
