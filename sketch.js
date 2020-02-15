@@ -1,10 +1,10 @@
 /* Coded by Eddy Ahlqvist - 2020 */
 
+let projectiles = [];
 let currentScore = 0;
 let hit = false
 let fire = false;
 let shots = 10;
-let projectiles = [];
 
 function setup() {
   createCanvas(800, 600);
@@ -14,23 +14,27 @@ function setup() {
   }
 }
 
+function mousePressed() {
+  for (let i = projectiles.length - 1; i >= 0; i--) {
+    if (projectiles[i].hitDetect(mouseX, mouseY)) {
+      projectiles.splice(i, 1);
+    }
+  }
+  fire = true;
+  console.log(projectiles);
+}
+
 function draw() {
   background(0, 0, 80);
   textSize(32);
   fill(255);
   text("Score: " + currentScore, 10, 35);
 
-  for (let projectile of projectiles) {
-    projectile.show();
-    projectile.fire();
-    projectile.bounds();
-  }
-}
-
-function mousePressed() {
   for (let i = 0; i < projectiles.length; i++) {
-    projectiles[i].hitdetect(mouseX, mouseY);
+    projectiles[i].hitDetect(mouseX, mouseY);
+    projectiles[i].show();
+    projectiles[i].fire();
+    projectiles[i].bounds();
   }
-  fire = true;
-  console.log(projectiles);
+
 }

@@ -10,8 +10,10 @@ class Projectile {
   }
 
   bounds() {
-    if (this.x >= width || this.y >= height || this.y <= 0){
-      projectiles.splice();
+    for (let i = projectiles.length - 1; i >= 0; i--) {
+      if (this.x >= width || this.y >= height || this.y <= 0) {
+        projectiles.splice(i, 1);
+      }
     }
   }
 
@@ -31,17 +33,19 @@ class Projectile {
     this.y += this.yspeed;
   }
 
-  hitdetect(_x, _y) {
+  hitDetect(_x, _y) {
     let d = dist(_x, _y, this.x, this.y);
-    if (d < this.dia / 2) {
-      hit = true;
-      projectiles.pop();
-      this.addScore();
-    } else {
-      hit = false;
-    }
-
+    return (d < this.dia / 2);
   }
+
+  // hitdetect(_x, _y) {
+  //   let d = dist(_x, _y, this.x, this.y);
+  //   if (d < this.dia / 2) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
   addScore() {
     if (hit == true) {
