@@ -22,6 +22,7 @@ function mousePressed() {
     }
   }
   fire = true; //tmp
+  console.log(projectiles);
 }
 
 function draw() {
@@ -36,4 +37,8 @@ function draw() {
     projectiles[i].fire();
     projectiles[i].bounds();
   }
+  // projectiles[0].hitDetect(mouseX, mouseY);
+  // projectiles[0].show();
+  // projectiles[0].fire();
+  // projectiles[0].bounds();
 }
