@@ -1,8 +1,5 @@
 /* Coded by Eddy Ahlqvist - 2020 */
 
-
-
-
 function setDifficulty(_diff) {
   diff = _diff;
 

@@ -4,16 +4,14 @@ let projectiles = [];
 let currentScore = 0;
 let fire = false;
 let shots = 10;
-let scoreMultiplier;
 
 function setup() {
   createCanvas(800, 600);
-  setDifficulty(3);
+  setDifficulty(2);
   for (i = 0; i < shots; i++) {
     let p = new Projectile(0, height / 2, random(25, 45));
     projectiles.push(p);
   }
-
 }
 
 function mousePressed() {
@@ -23,9 +21,7 @@ function mousePressed() {
       projectiles.splice(i, 1);
     }
   }
-  fire = true;
-
-  console.log(projectiles);
+  fire = true; //tmp
 }
 
 function draw() {

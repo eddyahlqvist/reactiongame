@@ -36,11 +36,10 @@ class Projectile {
   hitDetect(_x, _y) {
     let d = dist(_x, _y, this.x, this.y);
     return (d < this.dia / 2);
-
   }
 
   addScore() {
-      currentScore += 10 * scoreMultiplier;
+    currentScore += 10 * scoreMultiplier;
   }
 
 }
