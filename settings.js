@@ -1,16 +1,18 @@
 /* Coded by Eddy Ahlqvist - 2020 */
 
-let easy = false;
-let normal = true;
-let hard = false;
-let scoreMultiplyer;
 
-if (easy) {
-  scoreMultiplyer = 0.5;
-} else if (normal) {
-  scoreMultiplyer = 1;
-} else if (hard) {
-  scoreMultiplyer = 1.5;
-} else {
-  scoreMultiplyer = 0;
+
+
+function setDifficulty(_diff) {
+  diff = _diff;
+
+  if (diff == 1) {
+    scoreMultiplier = 0.5;
+  } else if (diff == 2) {
+    scoreMultiplier = 1;
+  } else if (diff == 3) {
+    scoreMultiplier = 1.5;
+  } else {
+    scoreMultiplier = 0;
+  }
 }

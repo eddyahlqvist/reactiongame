@@ -36,21 +36,11 @@ class Projectile {
   hitDetect(_x, _y) {
     let d = dist(_x, _y, this.x, this.y);
     return (d < this.dia / 2);
+
   }
 
-  // hitdetect(_x, _y) {
-  //   let d = dist(_x, _y, this.x, this.y);
-  //   if (d < this.dia / 2) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
   addScore() {
-    if (hit == true) {
-      currentScore += 10 * scoreMultiplyer;
-    }
+      currentScore += 10 * scoreMultiplier;
   }
 
 }
